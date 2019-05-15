@@ -1,0 +1,13 @@
+[Unit]
+Description=Sign Controller
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/sign
+ExecStart=/usr/bin/python /opt/sign/sign_api.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
